@@ -1,0 +1,31 @@
+package mains;
+
+import java.util.Arrays;
+
+public class recursion {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int a[] = { 2, 6, 4, 5, 3, 1 };
+
+		sort(a, 0, 0);
+		System.out.println(Arrays.toString(a));
+	}
+
+	private static void sort(int[] a, int i, int j) {
+		if (a[i] < a[j]) {
+			int temp = a[i];
+			a[i] = a[j];
+			a[j] = temp;
+		}
+		if (j < a.length-1)
+			j++;
+		else {
+			i++;
+			j = 0;
+		}
+		if (i < a.length)
+			sort(a, i, j);
+
+	}
+}
